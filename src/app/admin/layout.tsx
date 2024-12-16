@@ -1,10 +1,12 @@
 "use client";
+
 import Login from "@/components/admin-apanel/Login";
+import Sidebar from "@/components/admin-apanel/Sidebar";
 import { useAppSelector } from "@/redux/hooks";
 import { useSession } from "next-auth/react";
 import React from 'react'
 
-const layout = () => {
+const layout = ({children}: { children: React.ReactNode }) => {
   const isLoading = useAppSelector((store) => store.LoadingReducer);
   const { data: session} = useSession();
   
@@ -13,7 +15,15 @@ const layout = () => {
   }
 
   return (
-    <div>layout</div>
+    <div className="flex">
+      <Sidebar />
+      <div className="w-full h-full">
+      {}
+      <div>
+        {isLoading && <Loader />}
+      </div>
+      </div>
+    </div>
   )
 }
 
