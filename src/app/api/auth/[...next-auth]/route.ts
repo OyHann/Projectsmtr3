@@ -10,3 +10,6 @@ const handLer = NextAuth({
     ],
     secret: process.env.NEXTAUTH_SECRET,
     })
+
+
+export { handLer as GET, handLer as POST }
