@@ -1,0 +1,12 @@
+import { FcGoogle } from "react-icons/fc";
+
+const login = () => {
+  return (
+    <div className="bg-black main-h-screen grid place-items-center">
+      <button className="bg-white px-8 py-4 flex gap-2 items-center" onClick={() => signIn('google')}>
+        <FcGoogle size={30} /> Sing In with Google </button>
+    </div>
+  )
+}
+
+export default login
