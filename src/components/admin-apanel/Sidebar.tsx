@@ -4,6 +4,8 @@ import { MdDashboard, MdManageAccounts } from "react-icons/md";
 import { GrTransaction } from "react-icons/gr";
 import { IoAnalytics, IoSettings } from "react-icons/io5";
 import { RiShoppingCartLine } from "react-icons/ri";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const menus = [
     {
