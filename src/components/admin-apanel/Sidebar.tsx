@@ -47,7 +47,7 @@ const menus = [
     return (
       <div className="bg-white w-[300px] min-h-screen p-4 shrink-0">
         <div className="flex items-center gap-4">
-          <img className="size-12 rounded-lg" src="/img/SusStore.jpg" alt="logo" />
+          <img className="size-12 rounded-lg" src="/img/logo.jpg" alt="logo" />
           <h2 className="text-[20px] font-semibold">SusStore</h2>
         </div>
   
