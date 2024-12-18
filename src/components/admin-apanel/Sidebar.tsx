@@ -42,7 +42,8 @@ const menus = [
   
 
   const Sidebar = () => {
-    const pathName = usePathname();
+    const pathName = usePathname()
+
     return (
       <div className="bg-white w-[300px] min-h-screen p-4 shrink-0">
         <div className="flex items-center gap-4">

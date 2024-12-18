@@ -10,9 +10,11 @@ export async function GET() {
 
         return NextResponse.json(data);
     } catch (error) {
-        return NextResponse.json({
+        return NextResponse.json(
+            {
             error,
             msg: "Something went wrong",
-        }, {status: 400});
+        }, 
+        {status: 400});
     }
 }
