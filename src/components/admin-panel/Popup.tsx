@@ -79,4 +79,4 @@ const Popup = ({setOpenPopup, setUpdateTable}:PropsType) => {
   )
 }
 
-export default Popup
+export default Popup;
