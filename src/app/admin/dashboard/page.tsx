@@ -65,8 +65,6 @@ const Dashboard = () => {
         </div>
       </div>
     
-
-
       {openPopup && (
         <Popup setOpenPopup={setOpenPopup} setUpdateTable={setUpdateTable} />
       )}

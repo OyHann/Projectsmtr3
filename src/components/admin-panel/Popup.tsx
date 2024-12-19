@@ -70,8 +70,6 @@ const Popup = ({setOpenPopup, setUpdateTable}:PropsType) => {
         Save
       </button>
     </div>
-
-
     </form>
 
       </div>
