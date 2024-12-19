@@ -1,4 +1,5 @@
 "use client"
+import Popup from '@/components/admin-panel/Popup';
 import ProductsRow from '@/components/admin-panel/ProductsRow';
 import Product from '@/libs/models/Product';
 import { setLoading } from '@/redux/features/loadingSlice';
@@ -63,14 +64,14 @@ const Dashboard = () => {
           </table>
         </div>
       </div>
+    
+
+
+      {openPopup && (
+        <Popup setOpenPopup={setOpenPopup} setUpdateTable={setUpdateTable} />
+      )}
     </div>
+  );
+};
 
-
-    // {openPopup && {
-    //   <Popup setOpenPopup={setOpenPopup} setUpdateTable={setUpdateTable} />
-    // }}
-
-  )
-}
-
-export default Dashboard
+export default Dashboard;

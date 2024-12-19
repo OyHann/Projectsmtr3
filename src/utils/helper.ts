@@ -5,7 +5,7 @@ export const makeToast = (text: string) => {
         style: {
             borderRadius: '4px',
             background: '#333',
-            color: '#fff'
-        }
-    })
-}
+            color: '#fff',
+        },
+    });
+};
