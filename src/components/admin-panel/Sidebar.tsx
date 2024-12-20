@@ -53,7 +53,7 @@ const menus = [
   
         <ul className="space-y-4 mt-6">
           {menus.map((menu) => (
-            <Link key={menu.title}href={menu.href}className={'flex gap-2 items-center p-4 rounded-lg cursor-pointer hover:bg-pink hover:text-white ${pathName === menu.href ? "bg-pink text-white": "bg-gray-200"}'}>
+            <Link key={menu.title}href={menu.href}className={'bg-gray-200 flex gap-2 items-center p-4 rounded-lg cursor-pointer hover:bg-pink hover:text-white ${pathName === menu.href ? "bg-pink text-white": "bg-gray-200"}'}>
               <div className="text-[20px]">{menu.icon}</div>
               <p>{menu.title}</p>
             </Link>
