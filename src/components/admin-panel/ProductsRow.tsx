@@ -46,8 +46,8 @@ const ProductsRow = ({
           .delete(`/api/delete_product/${products._id}`)
           .then((res) => {
             console.log(res.data);
-            makeToast("Products Delete Successfully");
-            setUpdateTable((prevState) => !prevState);
+            makeToast("Products Deleted Successfully")
+            setUpdateTable((prevState) => !prevState)
           })
           .catch((err) => console.log(err))
           .finally(() => dispatch(setLoading(false)));
@@ -65,8 +65,7 @@ const ProductsRow = ({
       </td>
       <td>$ {products.price}</td>
       <td className="py-2">
-        <Image
-          src={products.imgSrc}
+        <Image src={products.imgSrc}
           width={40}
           height={40}
           alt="product_image"

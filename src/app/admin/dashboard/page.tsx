@@ -1,10 +1,10 @@
-"use client"
-import Popup from '@/components/admin-panel/Popup';
-import ProductsRow from '@/components/admin-panel/ProductsRow';
-import { setLoading } from '@/redux/features/loadingSlice';
-import { useAppDispatch } from '@/redux/hooks';
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+"use client";
+import Popup from "@/components/admin-panel/Popup";
+import ProductsRow from "@/components/admin-panel/ProductsRow";
+import { setLoading } from "@/redux/features/loadingSlice";
+import { useAppDispatch } from "@/redux/hooks";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 export interface IProduct {
   _id: string;
@@ -14,8 +14,8 @@ export interface IProduct {
   price: string;
   category: string;
 }
-const Dashboard = () => {
 
+const Dashboard = () => {
   const [products, setProducts] = useState([]);
   const [openPopup, setOpenPopup] = useState(false);
   const [updateTable, setUpdateTable] = useState(false);
@@ -23,25 +23,24 @@ const Dashboard = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(setLoading(true))
+    dispatch(setLoading(true));
 
     axios
       .get("/api/get_products")
       .then((res) => setProducts(res.data))
-      .catch((err) => console.log(err))
+      .catch((error) => console.log(error))
       .finally(() => dispatch(setLoading(false)));
-
   }, [updateTable]);
 
   return (
     <div>
-      <div className='bg-white h-[calc(100vh-96px)] rounded-lg p-4'>
-        <h2 className='text-3xl'>All Products</h2>
+      <div className="bg-white h-[calc(100vh-96px)] rounded-lg p-4">
+        <h2 className="text-3xl">All Products</h2>
 
-        <div className='mt-4 h-[calc(100vh-180px)] overflow-y-auto'>
-          <table className='w-full'>
+        <div className="mt-4 h-[calc(100vh-180px)] overflow-y-auto">
+          <table className="w-full">
             <thead>
-              <tr className='text-gray-500 border-t border-[#ececec]'>
+              <tr className="text-gray-500 border-t border-[#ececec]">
                 <th>SR No.</th>
                 <th>Name</th>
                 <th>Price</th>
@@ -50,20 +49,20 @@ const Dashboard = () => {
               </tr>
             </thead>
             <tbody>
-              {products.map((product: IProduct, index: number) => (
+              {products.map((product: IProduct, index) => (
                 <ProductsRow
                   key={product._id}
                   srNo={index + 1}
                   setOpenPopup={setOpenPopup}
                   setUpdateTable={setUpdateTable}
-                  products={product} />
-
+                  products={product}
+                />
               ))}
             </tbody>
           </table>
         </div>
       </div>
-    
+
       {openPopup && (
         <Popup setOpenPopup={setOpenPopup} setUpdateTable={setUpdateTable} />
       )}
