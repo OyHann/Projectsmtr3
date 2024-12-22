@@ -25,10 +25,11 @@ const Popup = ({setOpenPopup, setUpdateTable}:PropsType) => {
         e.preventDefault()
         dispatch(setLoading(true))
 
-        axios.put('/api/edit_product/${productData._id}', inputData).then (res => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        axios.put(`/api/edit_product/${productData._id}`, inputData).then (( res ) => {
           makeToast("Product Updated Successfully");
           setUpdateTable((prevState) => !prevState);
-        }).catch  (err => console.log(err)
+        }).catch  ((err) => console.log (err)
       ).finally(() => {dispatch(setLoading(false));
         setOpenPopup(false);
       });

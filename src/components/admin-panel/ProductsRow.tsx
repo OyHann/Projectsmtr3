@@ -30,7 +30,7 @@ const ProductsRow = ({
   };
 
   const onDelete = () => {
-    dispatch(setLoading(true));
+    dispatch(setLoading(true))
 
     const payload = {
       fileKey: products.fileKey,
@@ -48,10 +48,10 @@ const ProductsRow = ({
             makeToast("Products Delete Successfully");
             setUpdateTable((prevState) => !prevState);
           })
-          .catch((error) => console.log(error))
+          .catch((err) => console.log(err))
           .finally(() => dispatch(setLoading(false)));
       })
-      .catch((error) => console.log(error));
+      .catch((err) => console.log(err));
   };
 
   return (

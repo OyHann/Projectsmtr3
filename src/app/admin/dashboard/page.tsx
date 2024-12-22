@@ -1,7 +1,6 @@
 "use client"
 import Popup from '@/components/admin-panel/Popup';
 import ProductsRow from '@/components/admin-panel/ProductsRow';
-import Product from '@/libs/models/Product';
 import { setLoading } from '@/redux/features/loadingSlice';
 import { useAppDispatch } from '@/redux/hooks';
 import axios from 'axios';

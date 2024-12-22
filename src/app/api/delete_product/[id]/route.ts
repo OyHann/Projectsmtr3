@@ -5,19 +5,15 @@ import { NextRequest, NextResponse } from "next/server";
 export async function PUT(request: NextRequest, URLParams: any) {
     try {
 
-        const body = await request.json()
-        const id = URLParams.params.id
-        const { name, category, price } = body;
-
-
+        const id = URLParams.params.id;
+       
 
         await ConnectMongoDB();
 
-        console.log(id, {name, category, price,});
+        
+        await Product.findByIdAndDelete(id);
 
-        const data = await Product.findByIdAndUpdate(id, { name, category, price });
-
-        return NextResponse.json({msg: "Updated Successfully", data});
+        return NextResponse.json({msg: "Deleted Successfully"});
     } catch (error) {
         return NextResponse.json(
             {

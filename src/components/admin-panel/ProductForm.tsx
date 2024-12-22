@@ -70,9 +70,8 @@ const ProductForm = () => {
           });
         }}
         
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         onUploadError={(error: Error) => {
-          console.log("ERROR! ${error}");
+          console.log(`ERROR! ${error}`);
         }}
       />
 
