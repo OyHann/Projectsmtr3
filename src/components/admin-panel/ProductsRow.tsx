@@ -24,6 +24,7 @@ const ProductsRow = ({
 }: PropsType) => {
   const dispatch = useAppDispatch();
 
+  
   const onEdit = () => {
     dispatch(setProduct(products));
     setOpenPopup(true);
