@@ -13,28 +13,27 @@ interface PropsType {
   srNo: number;
   setOpenPopup: Dispatch<SetStateAction<boolean>>;
   setUpdateTable: Dispatch<SetStateAction<boolean>>;
-  products: IProduct;
+  product: IProduct;
 }
 
 const ProductsRow = ({
   srNo,
   setOpenPopup,
   setUpdateTable,
-  products,
+  product,
 }: PropsType) => {
   const dispatch = useAppDispatch();
 
-  
   const onEdit = () => {
-    dispatch(setProduct(products));
+    dispatch(setProduct(product));
     setOpenPopup(true);
   };
 
   const onDelete = () => {
-    dispatch(setLoading(true))
+    dispatch(setLoading(true));
 
     const payload = {
-      fileKey: products.fileKey,
+      fileKey: product.fileKey,
     };
 
     axios
@@ -43,16 +42,16 @@ const ProductsRow = ({
         console.log(res.data);
 
         axios
-          .delete(`/api/delete_product/${products._id}`)
+          .delete(`/api/delete_product/${product._id}`)
           .then((res) => {
             console.log(res.data);
-            makeToast("Products Deleted Successfully")
-            setUpdateTable((prevState) => !prevState)
+            makeToast("Product Deleted Successfully");
+            setUpdateTable((prevState) => !prevState);
           })
-          .catch((err) => console.log(err))
+          .catch((error) => console.log(error))
           .finally(() => dispatch(setLoading(false)));
       })
-      .catch((err) => console.log(err));
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -61,11 +60,12 @@ const ProductsRow = ({
         <div>{srNo}</div>
       </td>
       <td>
-        <div>{products.name}</div>
+        <div>{product.name}</div>
       </td>
-      <td>$ {products.price}</td>
+      <td>$ {product.price}</td>
       <td className="py-2">
-        <Image src={products.imgSrc}
+        <Image
+          src={product.imgSrc}
           width={40}
           height={40}
           alt="product_image"

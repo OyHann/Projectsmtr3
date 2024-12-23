@@ -1,6 +1,5 @@
 import { withUt } from "uploadthing/tw";
 
- 
 export default withUt({
   // Your existing Tailwind config
   content: [
@@ -21,7 +20,6 @@ export default withUt({
         center: true,
         padding: "15px",
       },
-
     },
   },
   plugins: [],
