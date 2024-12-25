@@ -36,21 +36,20 @@ const Navbar = ({ setShowCart }: PropsType) => {
                             </div>
                         </div>
 
-                            <div className='text-gray-500 text-[32px] relative cursor-pointer' onClick={() => setShowCart(true)}>
+                        <div className='text-gray-500 text-[32px] relative cursor-pointer' onClick={() => setShowCart(true)}>
 
-                                <AiOutlineShoppingCart />
+                            <AiOutlineShoppingCart />
 
-                                <div className='absolute top-[-15px] right-[-10px] bg-red-600 w-[25px] h-[25px] rounded-full text-white text-[14px] grid place-items-center'>
-                                    {cartCount}
-                                </div>
-
+                            <div className='absolute top-[-15px] right-[-10px] bg-red-600 w-[25px] h-[25px] rounded-full text-white text-[14px] grid place-items-center'>
+                                {cartCount}
                             </div>
-
-
+                        </div>
                     </div>
-
-
                 </div>
+
+
+
+
             </div>
         </div>
     )

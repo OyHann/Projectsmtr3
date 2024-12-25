@@ -1,4 +1,5 @@
 "use client"
+import Cart from '@/components/front-end/Cart';
 import Navbar from '@/components/front-end/Navbar';
 import React, { useState } from 'react';
 
@@ -8,7 +9,8 @@ const Home = () => {
   
   return (
     <main>
-      <Navbar setShowCart={setShowCart}/>
+      <Navbar setShowCart={setShowCart} />
+      <Cart setShowCart={setShowCart} />
     </main>
   );
 };
