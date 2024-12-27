@@ -1,11 +1,8 @@
-import toast, {
-    AiFillStar,
-    AiOutlineStar,
-    AiOutlineShoppingCart,
-} from "react-hot-toast";
+
 import { useAppDispatch } from "@/redux/hooks";
 import { addToCart } from "@/redux/features/cartSlice";
 import { makeToast } from "@/utils/helper";
+import { AiFillStar, AiOutlineShoppingCart, AiOutlineStar } from "react-icons/ai";
 
 interface PropsType {
     id: string;
@@ -46,7 +43,7 @@ const ProductCart = ({ id, img, category, title, price }: PropsType) => {
 
                 <div className="flex justify-between items-center mt-4">
                     <h2 className="font-medium text-accent text-xl">${price}.00</h2>
-                    <div className="flex gap-2 tems-center bg-pink text-white px-4 py-2 cursor-pointer hover:bg-accent" onClick={addProductToCart}>
+                    <div className="flex gap-2 items-center bg-pink text-white px-4 py-2 cursor-pointer hover:bg-accent" onClick={addProductToCart}>
                         <AiOutlineShoppingCart /> Add To Cart
 
                     </div>

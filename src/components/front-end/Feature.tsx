@@ -1,7 +1,7 @@
 import FeatureCard from "./FeatureCard";
 import { MdSupportAgent } from "react-icons/md";
 import { RiRefund2Fill } from "react-icons/ri";
-import { TbTruckDelivery } from "react-icons/tb";
+import { TbDiscount, TbTruckDelivery } from "react-icons/tb";
 
 const data = [
     {
@@ -15,7 +15,7 @@ const data = [
         desc: "Money back guarantee",
     },
     {
-        icon: <TbDiscount2  className="text-4xl"/>,
+        icon: <TbDiscount className="text-4xl"/>,
         title: "Member Discount",
         desc: "On orders over $199.00",
     },

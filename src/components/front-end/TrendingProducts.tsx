@@ -1,7 +1,7 @@
 "use client";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useAppDispatch } from "@/redux/hooks";
+import ProductCart from "./ProductCart";
 
 
 interface IProduct {
@@ -32,7 +32,7 @@ const TrendingProducts = () => {
     return(
         <div className="container mt-32">
             <div className="sm:flex justify-between items-center">
-                <h2>TrendingProducts</h2>
+                <h2 className="text-4xl font-medium">TrendingProducts</h2>
                 <div className="text-gray-500 flex gap-4 text-xl mt-4 sm:mt-0">
                     <div className="text-black">New</div>
                     <div>Featured</div>
