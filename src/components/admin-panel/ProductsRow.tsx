@@ -62,7 +62,7 @@ const ProductsRow = ({
       <td>
         <div>{product.name}</div>
       </td>
-      <td>$ {product.price}</td>
+      <td>Rp. {product.price}</td>
       <td className="py-2">
         <Image
           src={product.imgSrc}

@@ -33,6 +33,7 @@ const ProductForm = () => {
 
     axios
       .post("/api/add_product", payload)
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       .then((res) => {
         makeToast("Product Added Successfully");
         setPayload({

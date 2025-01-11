@@ -27,6 +27,7 @@ const Popup = ({ setOpenPopup, setUpdateTable }: PropsType) => {
 
     axios
       .put(`/api/edit_product/${productData._id}`, inputData)
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       .then((res) => {
         makeToast("Product Updated Successfully");
         setUpdateTable((prevState) => !prevState);
